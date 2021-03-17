@@ -3,8 +3,20 @@
 
     $id=$_POST['id'];
     $titre=$_POST['titre'];
-    $cover=$_POST['cover'];
     $prix=$_POST['prix'];
+    $cover=$_POST['cover'];
+    
+    $result=$connectdb->query("SELECT cover FROM livre WHERE id = $id");
+
+    $result= $result->fetch(PDO::FETCH_ASSOC);
+    
+    $cover = $result["cover"];
+    
+    
+    if  (isset($_FILES["cover"]) && $_FILES["cover"]["name"] != "") {
+        $cover = upload("/img-books/gallery/", "cover");
+        // dump($_FILES["cover"]["name"]);
+    }
 
     $result=$connectdb->prepare("UPDATE `livre` SET  `titre` = '$titre', `cover` = '$cover' , `prix` = '$prix' WHERE `id` = '$id';");
     $result->execute();
@@ -14,7 +26,6 @@
 
     $current_livre_auteurs = $result->fetchAll(PDO::FETCH_ASSOC);
 
-    // dump($current_livre_auteurs);
 
     // Remove existent relations that are not existent in the $_POST["authors"]
     foreach ($current_livre_auteurs as $current_livre_auteur) {

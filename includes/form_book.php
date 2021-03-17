@@ -22,7 +22,8 @@
                 <img src="<?php p_base_url("/icon/upload.svg") ?>" alt="" srcset="">
                 <span>Chose Cover</span>
             </label>
-            <input type="file" placeholder="Full name" id="cover" name="cover" value="" />
+            <input type="file" placeholder="Full name" id="cover" name="cover" />
+            <input type="hidden" placeholder="Full name" id="cover" name="cover" value="<?php echo $cover ?>" />
         </div>
     </div>
     <div class="right">
