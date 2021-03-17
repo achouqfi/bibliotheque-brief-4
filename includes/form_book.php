@@ -1,15 +1,12 @@
 <?php 
     if (isset($row)) {
         extract($row);
+        $result=$connectdb->prepare("SELECT id, name FROM auteur WHERE id IN (SELECT id_auteur FROM auteur_livre WHERE id_livre = ?)");
+        $result->execute([$id]);
+
+        $auteurs = $result->fetchAll(PDO::FETCH_ASSOC);
+
     }
-
-    $result=$connectdb->prepare("SELECT id, name FROM auteur");
-    $result->execute();
-
-    $auteurs = $result->fetchAll(PDO::FETCH_ASSOC);
-    
-
-    // dump($auteurs)
 
 ?>
 <form enctype="multipart/form-data" class="form" action="<?php p_base_url($action) ?>" method="POST">
@@ -18,14 +15,14 @@
     <div class="form-fild">
         <div class="file">
             <img class="close-icon" src="<?php p_base_url("/icon/close.svg") ?>" title="clear image" alt="clear image">
-            <img class="file-image" src="<?php p_base_url("/img-books/gallery/0cee7e54fda8ac99ec11459448e89c7d.jpg") ?>"
-                alt="" srcset="">
+            <img class="file-image" <?php 
+                    $cover = isset($cover) ? $cover : "0cee7e54fda8ac99ec11459448e89c7d.jpg"
+                ?> src="<?php p_base_url("/img-books/gallery/$cover") ?>" alt="" srcset="">
             <label for="" class="placeholder">
                 <img src="<?php p_base_url("/icon/upload.svg") ?>" alt="" srcset="">
                 <span>Chose Cover</span>
             </label>
-            <input type="file" placeholder="Full name" id="cover" name="cover"
-                value="<?php echo isset($cover) ? $cover : ""; ?>" />
+            <input type="file" placeholder="Full name" id="cover" name="cover" value="" />
         </div>
     </div>
     <div class="right">
@@ -34,31 +31,16 @@
             <label for="authors">Authors</label>
             <div class="textarea">
                 <div class="input">
+                    <?php if (isset($auteurs )): foreach ($auteurs as $auteur) :?>
+                    <span class="author">
+                        <input type="hidden" name="authors[]" value="<?php echo $auteur["id"]?>" />
+                        <?php echo $auteur["name"]?>
+                        <img class="close-icon" src="/icon/close.svg" title="remove author" alt="clear image">
+                    </span>
+                    <?php endforeach; endif; ?>
                     <input type="text" />
                 </div>
             </div>
-            <!-- <select name="authors[]" id="authors" class="authors" multiple="multiple">
-                <option value="-1" disabled selected>Select an author</option>
-                <?php foreach ($auteurs as $auteur) :?>
-                <?php
-                            
-                            $selected = "";
-
-                            if (isset($id)) {
-                                
-                                $result=$connectdb->prepare("SELECT id FROM auteur_livre WHERE id_auteur = ? and id_livre = ?");
-                                $result->execute([$auteur["id"], $id]);
-
-                                $current_auteur = $result->fetch(PDO::FETCH_ASSOC);
-
-                                $selected = $current_auteur ? "selected": "";
-
-                            }
-                        ?>
-                <option value="<?php echo $auteur["id"] ?>" <?php echo $selected ?>><?php echo $auteur["name"] ?>
-                </option>
-                <?php endforeach; ?>
-            </select> -->
         </div>
         <div class="form-fild">
             <label for="title">Title</label>

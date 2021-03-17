@@ -92,6 +92,42 @@ a {
       resize: none;
       height: 90px;
       background-color: #fff;
+      .input {
+        position: relative;
+        display: inline-block;
+        .suggestions {
+          position: absolute;
+          background-color: #fff;
+          width: 100%;
+          box-shadow: $box_shadow;
+          overflow: hidden;
+          border-radius: $border_radius;
+          .suggestion {
+            display: block;
+            padding: $spacing_sm;
+            cursor: pointer;
+            font-size: 1.3rem;
+            &:hover {
+              color: $background;
+              background-color: rgba($dark_color, 0.7);
+            }
+          }
+        }
+      }
+      .author {
+        display: inline-block;
+        padding: $spacing_xs $spacing_sm;
+        background-color: $background;
+        border-radius: $border_radius;
+        margin-right: $spacing_xs;
+        .close-icon {
+          width: 9px;
+          cursor: pointer;
+          &:hover {
+            filter: opacity(0.7);
+          }
+        }
+      }
       input {
         border: none;
         padding: 0;
@@ -155,6 +191,7 @@ a {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
   }
   .cta {
     background-color: $dark_color;

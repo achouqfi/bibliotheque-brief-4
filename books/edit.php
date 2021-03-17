@@ -1,4 +1,11 @@
 <?php
+
+    $importJsHead = [
+        "file.js",
+        "fetch.js",
+        "book.js"
+    ];
+
     require_once __DIR__ . "/../includes/header.php";
 
     require_file("/includes/nav.php");
@@ -13,7 +20,7 @@
 
 ?>
 
-    <section class="edit">
+<section class="edit">
 
     <?php 
         require_file("/includes/form_book.php", [
@@ -25,6 +32,6 @@
     ?>
 
 
-    </section>
+</section>
 
 <?php require_file("/includes/footer.php") ?>

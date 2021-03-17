@@ -1,17 +1,21 @@
 .edit {
-    @extend .container;
-    height:100vh;
-    display: flex;
-    align-items: center;
-    .form {
-        flex-wrap: wrap;
-        justify-content: center;
-        &-fild {
-            width: 100%;
-            margin-top: $spacing_sm;
-        }
-        .cta {
-            margin-top: $spacing_sm;
-        }
+  @extend .container;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .form {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-fild {
+      width: 100%;
+      margin-top: $spacing_sm;
     }
+    .right {
+      width: 100%;
+    }
+    .cta {
+      margin-top: $spacing_sm;
+    }
+  }
 }
