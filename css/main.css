@@ -27,12 +27,12 @@ a {
   text-decoration: none;
 }
 
-.container, .authors, .books, .gallery, .edit {
+.container, .authors, .books, .gallery, .edit, .contact {
   width: 80%;
   margin: 0 auto;
 }
 
-.cta {
+.cta, .footer .espace-mail .form .Subscribe, .footer .espace-mail .contact .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .Subscribe {
   color: #fff;
   display: block;
   border: none;
@@ -65,7 +65,7 @@ a {
   text-align: center;
 }
 
-.form {
+.form, .contact .formulaire-msg {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -81,13 +81,13 @@ a {
 }
 
 @media screen and (min-width: 720px) {
-  .form {
+  .form, .contact .formulaire-msg {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
 }
 
-.form .form-fild {
+.form .form-fild, .contact .formulaire-msg .form-fild {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -100,18 +100,20 @@ a {
   margin-bottom: 0.9rem;
 }
 
-.form .form-fild:not(.authors) {
+.form .form-fild:not(.authors), .contact .formulaire-msg .form-fild:not(.authors) {
   width: calc(40% - 0.9rem);
   margin-bottom: 0;
 }
 
-.form .form-fild label {
+.form .form-fild label, .contact .formulaire-msg .form-fild label {
   display: block;
 }
 
-.form .form-fild input,
+.form .form-fild input, .contact .formulaire-msg .form-fild input,
 .form .form-fild select,
-.form .form-fild .textarea {
+.contact .formulaire-msg .form-fild select,
+.form .form-fild .textarea,
+.contact .formulaire-msg .form-fild .textarea {
   width: 80%;
   padding: 0.9rem;
   border-radius: 4px;
@@ -119,19 +121,21 @@ a {
   border: 1px solid rgba(0, 0, 0, 0.6);
 }
 
-.form .form-fild .textarea {
+
+.form .form-fild .textarea,
+.contact .formulaire-msg .form-fild .textarea {
   width: 92.4%;
   resize: none;
   height: 90px;
   background-color: #fff;
 }
 
-.form .form-fild .textarea .input {
+.form .form-fild .textarea .input, .contact .formulaire-msg .form-fild .textarea .input {
   position: relative;
   display: inline-block;
 }
 
-.form .form-fild .textarea .input .suggestions {
+.form .form-fild .textarea .input .suggestions, .contact .formulaire-msg .form-fild .textarea .input .suggestions {
   position: absolute;
   background-color: #fff;
   width: 100%;
@@ -141,19 +145,19 @@ a {
   border-radius: 4px;
 }
 
-.form .form-fild .textarea .input .suggestions .suggestion {
+.form .form-fild .textarea .input .suggestions .suggestion, .contact .formulaire-msg .form-fild .textarea .input .suggestions .suggestion {
   display: block;
   padding: 0.9rem;
   cursor: pointer;
   font-size: 1.3rem;
 }
 
-.form .form-fild .textarea .input .suggestions .suggestion:hover {
+.form .form-fild .textarea .input .suggestions .suggestion:hover, .contact .formulaire-msg .form-fild .textarea .input .suggestions .suggestion:hover {
   color: #CBBEAB;
   background-color: rgba(42, 54, 31, 0.7);
 }
 
-.form .form-fild .textarea .author {
+.form .form-fild .textarea .author, .contact .formulaire-msg .form-fild .textarea .author {
   display: inline-block;
   padding: 0.6rem 0.9rem;
   background-color: #CBBEAB;
@@ -161,23 +165,23 @@ a {
   margin-right: 0.6rem;
 }
 
-.form .form-fild .textarea .author .close-icon {
+.form .form-fild .textarea .author .close-icon, .contact .formulaire-msg .form-fild .textarea .author .close-icon {
   width: 9px;
   cursor: pointer;
 }
 
-.form .form-fild .textarea .author .close-icon:hover {
+.form .form-fild .textarea .author .close-icon:hover, .contact .formulaire-msg .form-fild .textarea .author .close-icon:hover {
   -webkit-filter: opacity(0.7);
           filter: opacity(0.7);
 }
 
-.form .form-fild .textarea input {
+.form .form-fild .textarea input, .contact .formulaire-msg .form-fild .textarea input {
   border: none;
   padding: 0;
   font-size: 1.2rem;
 }
 
-.form .form-fild .file {
+.form .form-fild .file, .contact .formulaire-msg .form-fild .file {
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -191,7 +195,7 @@ a {
   border-radius: 4px;
 }
 
-.form .form-fild .file .close-icon {
+.form .form-fild .file .close-icon, .contact .formulaire-msg .form-fild .file .close-icon {
   cursor: pointer;
   position: absolute;
   right: 0.3rem;
@@ -199,7 +203,7 @@ a {
   top: 0.3rem;
 }
 
-.form .form-fild .file .placeholder {
+.form .form-fild .file .placeholder, .contact .formulaire-msg .form-fild .file .placeholder {
   width: 100%;
   color: #fff;
   position: relative;
@@ -222,11 +226,11 @@ a {
           flex-direction: column;
 }
 
-.form .form-fild .file .placeholder img {
+.form .form-fild .file .placeholder img, .contact .formulaire-msg .form-fild .file .placeholder img {
   display: block;
 }
 
-.form .form-fild .file-image {
+.form .form-fild .file-image, .contact .formulaire-msg .form-fild .file-image {
   position: absolute;
   z-index: 99;
   left: 50%;
@@ -234,7 +238,7 @@ a {
           transform: translateX(-50%);
 }
 
-.form .form-fild .file input[type="file"] {
+.form .form-fild .file input[type="file"], .contact .formulaire-msg .form-fild .file input[type="file"] {
   opacity: 0;
   width: 100%;
   height: 100%;
@@ -245,7 +249,7 @@ a {
   cursor: pointer;
 }
 
-.form .right {
+.form .right, .contact .formulaire-msg .right {
   width: 76%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -260,7 +264,7 @@ a {
           justify-content: space-between;
 }
 
-.form .cta {
+.form .cta, .contact .formulaire-msg .cta, .footer .espace-mail .form .Subscribe, .footer .espace-mail .contact .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .Subscribe {
   background-color: #2A361F;
   cursor: pointer;
   width: 20%;
@@ -290,7 +294,7 @@ a {
   border-radius: 23px;
 }
 
-.table table td .cta {
+.table table td .cta, .table table td .footer .espace-mail .form .Subscribe, .footer .espace-mail .form .table table td .Subscribe, .table table td .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .formulaire-msg .table table td .Subscribe, .table table td .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .table table td .Subscribe {
   background-color: #CBBEAB;
   display: inline-block;
 }
@@ -483,12 +487,12 @@ a {
   }
 }
 
-.main-navbar .cta_wrapper .cta {
+.main-navbar .cta_wrapper .cta, .main-navbar .cta_wrapper .footer .espace-mail .form .Subscribe, .footer .espace-mail .form .main-navbar .cta_wrapper .Subscribe, .main-navbar .cta_wrapper .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .formulaire-msg .main-navbar .cta_wrapper .Subscribe, .main-navbar .cta_wrapper .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .main-navbar .cta_wrapper .Subscribe {
   margin: 0 auto;
 }
 
 @media screen and (min-width: 720px) {
-  .main-navbar .cta_wrapper .cta {
+  .main-navbar .cta_wrapper .cta, .main-navbar .cta_wrapper .footer .espace-mail .form .Subscribe, .footer .espace-mail .form .main-navbar .cta_wrapper .Subscribe, .main-navbar .cta_wrapper .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .formulaire-msg .main-navbar .cta_wrapper .Subscribe, .main-navbar .cta_wrapper .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .main-navbar .cta_wrapper .Subscribe {
     right: 10px;
     top: 10px;
     margin: 0;
@@ -518,16 +522,50 @@ a {
   }
 }
 
+.home {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.home-title {
+  position: relative;
+  height: 100%;
+  color: #fff;
+}
+
+.home-title .img-1 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.home-title img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.home-title .description {
+  padding: 3rem 0.9rem;
+  position: relative;
+  z-index: 99;
+  width: 60%;
+}
+
+.home-title .description .titre-home {
+  font-size: 2.3rem;
+}
+
 .authors {
   width: 80%;
   margin: 0 auto;
 }
 
-.authors .cta {
+.authors .cta, .authors .footer .espace-mail .form .Subscribe, .footer .espace-mail .form .authors .Subscribe, .authors .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .formulaire-msg .authors .Subscribe, .authors .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .authors .Subscribe {
   width: auto;
 }
 
-.authors .form .form-fild {
+.authors .form .form-fild, .authors .contact .formulaire-msg .form-fild, .contact .authors .formulaire-msg .form-fild {
   width: 28%;
 }
 
@@ -539,7 +577,7 @@ a {
   width: 23%;
 }
 
-.books .form .right .authors {
+.books .form .right .authors, .books .contact .formulaire-msg .right .authors, .contact .books .formulaire-msg .right .authors {
   width: 100%;
   margin-right: 0;
   -webkit-box-align: start;
@@ -547,17 +585,17 @@ a {
           align-items: flex-start;
 }
 
-.books .form .right .authors label {
+.books .form .right .authors label, .books .contact .formulaire-msg .right .authors label, .contact .books .formulaire-msg .right .authors label {
   margin-top: 0.9rem;
 }
 
-.gallery .form {
+.gallery .form, .gallery .contact .formulaire-msg, .contact .gallery .formulaire-msg {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
 }
 
 @media screen and (min-width: 720px) {
-  .gallery .form {
+  .gallery .form, .gallery .contact .formulaire-msg, .contact .gallery .formulaire-msg {
     -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
   }
@@ -586,13 +624,13 @@ a {
   }
 }
 
-.gallery .form .cta {
+.gallery .form .cta, .gallery .contact .formulaire-msg .cta, .contact .gallery .formulaire-msg .cta, .gallery .footer .espace-mail .form .Subscribe, .footer .espace-mail .gallery .form .Subscribe, .gallery .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .gallery .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .gallery .formulaire-msg .Subscribe, .gallery .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .gallery .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .gallery .formulaire-msg .Subscribe {
   width: 100%;
   background-color: #2A361F;
 }
 
 @media screen and (min-width: 720px) {
-  .gallery .form .cta {
+  .gallery .form .cta, .gallery .contact .formulaire-msg .cta, .contact .gallery .formulaire-msg .cta, .gallery .footer .espace-mail .form .Subscribe, .footer .espace-mail .gallery .form .Subscribe, .gallery .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .gallery .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .gallery .formulaire-msg .Subscribe, .gallery .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .gallery .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .gallery .formulaire-msg .Subscribe {
     width: unset;
   }
 }
@@ -694,7 +732,7 @@ a {
           align-items: center;
 }
 
-.edit .form {
+.edit .form, .edit .contact .formulaire-msg, .contact .edit .formulaire-msg {
   width: 100%;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -708,11 +746,118 @@ a {
   margin-top: 0.9rem;
 }
 
-.edit .form .right {
+.edit .form .right, .edit .contact .formulaire-msg .right, .contact .edit .formulaire-msg .right {
   width: 100%;
 }
 
-.edit .form .cta {
+.edit .form .cta, .edit .contact .formulaire-msg .cta, .contact .edit .formulaire-msg .cta, .edit .footer .espace-mail .form .Subscribe, .footer .espace-mail .edit .form .Subscribe, .edit .footer .espace-mail .contact .formulaire-msg .Subscribe, .footer .espace-mail .edit .contact .formulaire-msg .Subscribe, .footer .espace-mail .contact .edit .formulaire-msg .Subscribe, .edit .contact .footer .espace-mail .formulaire-msg .Subscribe, .contact .edit .footer .espace-mail .formulaire-msg .Subscribe, .contact .footer .espace-mail .edit .formulaire-msg .Subscribe {
   margin-top: 0.9rem;
+}
+
+.contact .formulaire-msg {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+}
+
+.contact .formulaire-msg .col {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .formulaire-msg .col textarea {
+  width: 100%;
+  height: 150px;
+  margin: 0 0.9rem;
+  padding: 0.9rem;
+  margin-bottom: 0.9rem;
+  border-radius: 4px;
+}
+
+.contact .formulaire-msg .col .form-fild {
+  width: 50%;
+  padding: 0 0.9rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.contact .formulaire-msg .col .form-fild input {
+  width: 100%;
+  margin-bottom: 0.9rem;
+}
+
+.contact .formulaire-msg .col .errors {
+  margin-bottom: 0.9rem;
+}
+
+.footer {
+  background-color: #2A361F;
+  color: #fff;
+}
+
+.footer-con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  min-height: 150px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.footer-con .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+}
+
+.footer-con .icon li {
+  padding: 0 0.9rem 0 0;
+}
+
+.footer .espace-mail {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.footer .espace-mail .form, .footer .espace-mail .contact .formulaire-msg, .contact .footer .espace-mail .formulaire-msg {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 70%;
+  margin: 0;
+}
+
+.footer .espace-mail .form .form-fild, .footer .espace-mail .contact .formulaire-msg .form-fild, .contact .footer .espace-mail .formulaire-msg .form-fild {
+  width: 70%;
+  margin-right: 0.9rem;
+}
+
+.footer .espace-mail .form .form-fild input, .footer .espace-mail .contact .formulaire-msg .form-fild input, .contact .footer .espace-mail .formulaire-msg .form-fild input {
+  width: 100%;
+}
+
+.footer .espace-mail .form .Subscribe, .footer .espace-mail .contact .formulaire-msg .Subscribe, .contact .footer .espace-mail .formulaire-msg .Subscribe {
+  width: 30%;
+  background-color: #d7cdbf;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,28 @@
+.home {
+  height: 100vh;
+  overflow: hidden;
+  &-title {
+    position: relative;
+    height: 100%;
+    color: #fff;
+    .img-1 {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .description {
+      padding: $spacing_xl $spacing_sm;
+      position: relative;
+      z-index: 99;
+      width: 60%;
+      .titre-home {
+        font-size: 2.3rem;
+      }
+    }
+  }
+}

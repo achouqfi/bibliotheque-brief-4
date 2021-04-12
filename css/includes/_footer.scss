@@ -1,0 +1,42 @@
+.footer {
+  background-color: $dark_color;
+  color: #fff;
+  &-con {
+    display: flex;
+    width: 100%;
+    min-height: 150px;
+    justify-content: space-between;
+    padding: $spacing_md;
+    align-items: center;
+    .icon {
+      display: flex;
+      list-style-type: none;
+      li {
+        padding: 0 $spacing_sm 0 0;
+      }
+    }
+  }
+  .espace-mail {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    .form {
+      justify-content: flex-end;
+      width: 70%;
+      margin: 0;
+      .form-fild {
+        width: 70%;
+        margin-right: $spacing_sm;
+        input {
+          width: 100%;
+        }
+      }
+      .Subscribe {
+        @extend .cta;
+        width: 30%;
+        background-color: #d7cdbf;
+        border-radius: $border_radius;
+      }
+    }
+  }
+}
